@@ -1,14 +1,38 @@
-# AI Bubble Liquidity Check
+# AI 泡沫流動性檢測（AI Bubble Liquidity Check)
 
-This repository contains research notes and an implementation-ready blueprint for a monthly liquidity dashboard tracking AI bubble, leverage, credit, policy liquidity, and crypto hot-money signals.
+本 repo 為**研究筆記與設計文件庫**（非程式碼專案），目標是為一個「月度流動性儀表板」建立可直接實作的藍圖：透過三層流動性（政策／市場信用／投機）加上 AI 資本支出對 EPS 的傳導橋，監測美股 AI 泡沫風險。儀表板尚未實作，目前處於規格（spec）階段。
 
-## Structure
+## 目錄結構
 
-- `docs_references/`: source research report and structured analysis report.
-- `drafts/`: dashboard design contract and implementation blueprint.
+```
+docs_references/   上游研究證據（唯讀，不修改其結論）
+  美股AI泡沫-流動性槓桿診斷與破裂點推演.md          完整來源研究報告
+  美股AI泡沫-流動性槓桿診斷與破裂點推演-分析報告.md   上述報告的結構化摘要
 
-## Primary Artifacts
+drafts/            下游設計產物（實際工作文件，狀態皆為 Draft）
+  月度流動性儀表板設計圖.md      權威實作藍圖（單一事實來源，見下）
+  DESIGN.md                    產品設計契約速覽（目標、IA、元件、無障礙、狀態）
+  資料抓取與查證工作流.md        資料取得 SOP：各指標抓取模式與每月查證清單
+  第14節待決問題選項與建議報告.md  藍圖 §14 待決問題的選項分析與建議
+```
 
-- `drafts/DESIGN.md`
-- `drafts/月度流動性儀表板設計圖.md`
-- `drafts/資料抓取與查證工作流.md`
+## 核心文件：`drafts/月度流動性儀表板設計圖.md`
+
+藍圖是以下內容的單一事實來源：
+
+- **9 個核心指標**（§5.1）：id、所屬層、bear／bull 門檻與權重（權重合計 100）
+- **計分規則**（§6）：六種訊號狀態 → 分數，含 stale／missing 排除規則
+- **層級分數**（§6.2）：三層流動性 ＋ AI EPS 傳導橋
+- **情境引擎**（§7）：Bear／Base／Bull 由明確條件數驅動
+- **新鮮度規則**（§9）與**資料模型**（§8）
+- **月報匯出格式**（§11）、**首版驗收條件**（§13）
+- **待決問題**（§14）：實作平台、資料授權、匯出格式等尚未定案
+
+## 重要約束
+
+- §14 為規格閘門（spec gate）：任何待決問題未解決前，不得撰寫正式規格或啟動 Phase 1 實作。
+- 文件語言為繁體中文；語氣冷靜、研究導向、可稽核，不做投資建議或價格預測。
+- 每個門檻／訊號主張必須可追溯到來源指標、公式與資料日期。
+- 更新設計決策時修改 `drafts/`，不動 `docs_references/`；新來源材料放入 `docs_references/` 並自 `drafts/` 引用。
+
+詳細協作規範見 `CLAUDE.md`。
