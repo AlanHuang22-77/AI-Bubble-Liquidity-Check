@@ -20,6 +20,10 @@ docs_references/   → source research (read-only evidence, do not edit conclusi
 drafts/             → derived design artifacts (the actual working documents)
   DESIGN.md                          product/design-contract shorthand (goals, IA, components, a11y, states)
   月度流動性儀表板設計圖.md            the authoritative implementation blueprint (see below)
+  資料抓取與查證工作流.md              data-acquisition SOP: per-indicator fetch mode (auto/semi/manual),
+                                     source-tier handling rules, and the monthly verification checklist
+                                     (operationalizes the source report's Appendix B/C; blueprint §9 defines
+                                     what to fetch, this SOP defines how to fetch and verify)
 ```
 
 `docs_references/` is upstream evidence; `drafts/` is downstream synthesis. When updating design decisions, edit `drafts/`, not `docs_references/`. If new source material arrives, add it under `docs_references/` and cite it from `drafts/`.

@@ -11,3 +11,4 @@ This repository contains research notes and an implementation-ready blueprint fo
 
 - `drafts/DESIGN.md`
 - `drafts/月度流動性儀表板設計圖.md`
+- `drafts/資料抓取與查證工作流.md`
