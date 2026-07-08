@@ -53,4 +53,4 @@ drafts/             → derived design artifacts (the actual working documents)
 
 ## When asked to implement the dashboard
 
-The blueprint's §14 open questions (platform, data source licensing, scenario-probability display, update ownership) are unresolved. Do not pick a framework/platform unilaterally — surface these as decisions for the user, per Phase 1 in blueprint §12 (local MVP: CSV/JSON input, 9 indicators, overview + indicator table + Markdown report export).
+**Spec gate**: blueprint §14 is the single authoritative open-questions list, and it defines a hard gate — while any §14 question is unresolved, do NOT write a formal spec, promote any draft to `status: spec`, or start Phase 1 implementation. Do not pick a framework/platform unilaterally — surface §14 questions as decisions for the user. When a question is decided, write the answer into the relevant blueprint section, move the question to §14's「已決議」list, and only after the list is fully cleared may documents graduate from draft. Phase 1 scope, once unblocked, is defined in blueprint §12 (local MVP: CSV/JSON input, 9 indicators, overview + indicator table + Markdown report export).
