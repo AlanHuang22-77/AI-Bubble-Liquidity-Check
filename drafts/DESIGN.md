@@ -5,9 +5,9 @@
 - Last refreshed: 2026-07-08
 - Primary product surfaces: 月度流動性儀表板、月報匯出頁、指標明細頁、資料品質檢查頁
 - Evidence reviewed:
-  - `美股AI泡沫-流動性槓桿診斷與破裂點推演-分析報告.md`
-  - `美股AI泡沫-流動性槓桿診斷與破裂點推演.md`
-  - `docs_references/`，目前未含可用設計或資料規格檔
+  - `docs_references/美股AI泡沫-流動性槓桿診斷與破裂點推演-分析報告.md`
+  - `docs_references/美股AI泡沫-流動性槓桿診斷與破裂點推演.md`
+  - `月度流動性儀表板設計圖.md`（同目錄，為指標、計分、情境規則的權威規格；本檔與其衝突時以該檔為準）
 
 ## Brand
 - Personality: 冷靜、研究導向、可稽核、避免交易喊單語氣。
@@ -66,10 +66,11 @@
   - FourQuestionSummary
   - LiquidityLayerGauge
   - IndicatorStatusTable
+  - TopChangeList
   - ScenarioMatrix
   - DataFreshnessBadge
   - MonthlyReportExporter
-- Variants and states: normal、warning、bear-confirmed、bull-invalidated、stale、missing。
+- Variants and states: 與設計圖 §6.1／§10.1 對齊，統一使用 `bear_confirmed`、`bear_watch`、`neutral`、`bull_invalidated`、`stale`、`missing` 六態，不另創別名。
 - Token/component ownership: 前端實作時需建立語義色 token、資料狀態 token、表格密度 token。
 
 ## Accessibility
@@ -108,7 +109,5 @@
   - 桌面、平板、手機主要畫面截圖檢查。
 
 ## Open questions
-- [ ] 實作平台是 Web app、Google Sheets/Looker Studio、Notion/Obsidian，還是 Python Streamlit？
-- [ ] 指標資料來源要採自動 API、手動 CSV，還是混合模式？
-- [ ] 月報匯出格式要 Markdown、PDF、HTML，還是三者都要？
-- [ ] 情境機率是否允許手動調整，或完全由門檻規則生成？
+
+開放問題統一維護於 `月度流動性儀表板設計圖.md` §14（唯一權威清單），不在本檔重複列出，避免兩處清單發散。
